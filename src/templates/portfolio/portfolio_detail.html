@@ -1,17 +1,21 @@
 <h1>{{ project.title }}</h1>
+
+{% if project.image %}
 <img src="{{ project.image.url }}" alt="{{ project.title }}" />
-<p>{{ project.description }}</p>
+{% endif %}
+
+<p>{{ project.description|linebreaks }}</p>
+
 <h3>Metodologia</h3>
-<p>{{ project.methodology }}</p>
+<p>{{ project.methodology|linebreaks }}</p>
+
 <h3>Resultados</h3>
-<p>{{ project.results }}</p>
+<p>{{ project.results|linebreaks }}</p>
 
 {% if project.github_link %}
-
-<a href="{{ project.github_link }}" target="_blank">Ver no GitHub</a>
-
+<p><a href="{{ project.github_link }}" target="_blank">Ver no GitHub</a></p>
 {% endif %} {% if project.demo_link %}
-
-<a href="{{ project.demo_link }}" target="_blank">Ver Demonstração</a>
-
-{% endif %}
+<p><a href="{{ project.demo_link }}" target="_blank">Ver Demonstração</a></p>
+{% endif %} {% if forecast_plot %}
+<h3>Visualização Interativa</h3>
+{{ forecast_plot|safe }} {% endif %}
