@@ -1,0 +1,13 @@
+<h1>Portfólio</h1>
+<div class="projects">
+  {% for project in projects %}
+  <div class="project-card">
+    <h2>
+      <a href="{% url 'portfolio_detail' slug=project.slug %}"
+        >{{ project.title }}</a
+      >
+    </h2>
+    <p>{{ project.description|truncatewords:30 }}</p>
+  </div>
+  {% endfor %}
+</div>

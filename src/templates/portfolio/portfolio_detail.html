@@ -1,0 +1,17 @@
+<h1>{{ project.title }}</h1>
+<img src="{{ project.image.url }}" alt="{{ project.title }}" />
+<p>{{ project.description }}</p>
+<h3>Metodologia</h3>
+<p>{{ project.methodology }}</p>
+<h3>Resultados</h3>
+<p>{{ project.results }}</p>
+
+{% if project.github_link %}
+
+<a href="{{ project.github_link }}" target="_blank">Ver no GitHub</a>
+
+{% endif %} {% if project.demo_link %}
+
+<a href="{{ project.demo_link }}" target="_blank">Ver Demonstração</a>
+
+{% endif %}
