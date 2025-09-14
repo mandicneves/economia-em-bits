@@ -5,7 +5,7 @@ from .utils import generate_forecast_plot
 # Create your views here.
 def portfolio_list(request, *args, **kwargs):
     projects = Project.objects.all()
-    return render(request, "portfolio/portfolio_list.html", {})
+    return render(request, "portfolio/portfolio_list.html", {"projects": projects})
 
 def portfolio_detail(request, slug):
     project = get_object_or_404(Project, slug=slug)
